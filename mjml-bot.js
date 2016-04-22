@@ -45,7 +45,7 @@ controller.hears(['//gist.github.com'], 'direct_message,direct_mention,mention',
 
     var Gisty = require('gisty');
     var emails = [];
-    getRecipients(getRecipients, function(err, response) {
+    getRecipients(message, function(err, response) {
         emails = [
             response.user.profile.email
         ];
@@ -91,7 +91,7 @@ controller.hears(['```'], 'direct_message,direct_mention,mention', function(bot,
     var mjmlContent = message.text.replace('```', '');
 
     var emails = [];
-    getRecipients(getRecipients, function(err, response) {
+    getRecipients(message, function(err, response) {
         emails = [
             response.user.profile.email
         ];
